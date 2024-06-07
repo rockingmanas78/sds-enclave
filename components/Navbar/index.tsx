@@ -2,10 +2,18 @@ import Link from 'next/link';
 import { useScrollTrigger } from '@mui/material';
 import classNames from 'classnames';
 import styles from './Navbar.module.scss';
-import { handleMoveToId } from 'utils';
+// import { handleMoveToId } from 'utils';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
+import style from '../RealEstate/RealEstate.module.scss';
+
+// Home  About Us // Gallery  // contact us
+import AddIcCallIcon from '@mui/icons-material/AddIcCall';
+import WhatsappImage from '../../public/whatsapp.png';
+
+import Image from 'next/image';
+
 type Menu = {
   text: string;
   onClick?: () => void;
@@ -17,6 +25,10 @@ export type NavbarProps = {
   setOpen?: () => void;
   logoColor?: string;
   home?: boolean;
+};
+
+export type LinkTag = {
+  color: string;
 };
 
 const Navbar: React.FC<NavbarProps> = ({
@@ -33,27 +45,41 @@ const Navbar: React.FC<NavbarProps> = ({
 
   const menus: Menu[] = [
     {
-      text: 'Sponsors',
+      text: 'Home',
       onClick: () => router.push('/sponsor'),
-      path: '/sponsor',
-    },
-    {
-      text: 'About us',
-      path: '/?about-us=true',
-    },
-    {
-      text: 'Careers',
-      onClick: () => router.push('/career'),
-      path: '/career',
+      path: '/',
     },
     // {
-    //   text: 'Contact Us',
-    //   onClick: () => handleButtonClick(),
+    //   text: 'Real Estate',
+    //   onClick: () => router.push('/real-estate'),
+    //   path: '/real-estate',
     // },
     {
-      text: 'Get Started',
-      path: '/?cta=true',
+      text: 'About us',
+      path: '#about',
     },
+    {
+      text: 'Gallery',
+      path: '#gallery',
+      // onClick: () => router.push('/career'),
+      // path: '/pillar',
+    },
+    {
+      text: 'News',
+      path: '#blog',
+      // onClick: () => router.push('/career'),
+      // path: '/pillar',
+    },
+    {
+      text: 'Contact Us',
+      path: '#contactus',
+      // onClick: () => router.push('/contact-us'),
+      // path: '/contact-us',
+    },
+    // {
+    //   text: 'Get Started',
+    //   path: '/?cta=true',
+    // },
   ];
 
   const [activeLogoColor, setActiveLogoColor] = useState('');
@@ -66,6 +92,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <nav
+      style={{ color: '#000' }}
       className={classNames(`${styles.navbar} padding-wrapper`, {
         [styles.active]: trigger || dark,
       })}>
@@ -73,7 +100,7 @@ const Navbar: React.FC<NavbarProps> = ({
         <div className={styles['navbar-content-box']}>
           <Link href="/">
             <a>
-              <img src={`/sds_logo.png`} alt="Pillar Markets" width={120} height={120} />
+              <img src={`/sds_logo.png`} alt="Pillar Markets" width="auto" style={{ height: '60%' }} />
             </a>
           </Link>
         </div>
@@ -92,17 +119,15 @@ const Navbar: React.FC<NavbarProps> = ({
               return (
                 <div className={styles['navbar-content-box']} key={idx}>
                   <Link href={menu.path} passHref>
-                    <a>
-                      <button className={`ui-button primary ${linkClass} ${homeClass}`}>{menu.text}</button>
-                    </a>
+                    <a style={{ color: '#A70B01' }}>{menu.text}</a>
                   </Link>
                 </div>
               );
             })}
         </div>
       </div>
-      <div className={styles['sidebar-trigger']} onClick={setOpen}>
-        <MenuIcon style={{ fontSize: 30 }} htmlColor={trigger ? 'white' : logoColor} />
+      <div className={styles.hamburger} onClick={setOpen}>
+        <MenuIcon style={{ fontSize: 30, color: '#A70B01' }} htmlColor={trigger ? 'white' : logoColor} />
       </div>
     </nav>
   );

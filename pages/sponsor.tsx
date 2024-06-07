@@ -1,5 +1,5 @@
 import useMediaQuery from '@mui/material/useMediaQuery';
-import CTA from 'components/CTA';
+import CTA from 'components/ContactUs';
 import MainLayout from 'components/Layouts/MainLayout';
 import Banner from 'components/Sponsor/Banner';
 import Financial from 'components/Sponsor/Financial';

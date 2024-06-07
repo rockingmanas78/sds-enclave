@@ -52,7 +52,7 @@ const Pillars = () => {
 
   return (
     <section className={styles.pillars}>
-      <h3>Our Pillars</h3>
+      <h3>News</h3>
       <div className={styles['pillars-content']}>
         <Grid container>
           {pillarCardsContent.map(({ title, subtitle, description, image, path }, index) => {

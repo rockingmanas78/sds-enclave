@@ -69,7 +69,7 @@ export default Amenities;  */
 /*************** */
 
 import { Grid } from '@mui/material';
-import { SolutionType } from 'types/solution';
+import { SolutionType } from '../../types/solution';
 import styles from './Amenity.module.scss';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 import PriceCheckIcon from '@mui/icons-material/PriceCheck';
@@ -173,7 +173,7 @@ const Amenities = () => {
       <div className={styles['pillar-solution-content']}>
         <Grid container rowSpacing={1} columnSpacing={1}>
           {solutions.map((solution, index) => (
-            <Grid item xs={6} md={4} lg={3} key={index}>
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
               <div className={styles['pillar-solution-content-item']}>
                 {solution.icon}
                 <h3 className={styles['pillar-solution-content-item']}>{solution.title}</h3>

@@ -8,7 +8,9 @@
   background-repeat: no-repeat;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
+  padding-left: 20px;
+  text-align: left;
   color: white;
   &::before {
     content: '';
@@ -78,3 +80,57 @@
     }
   }
 }
+@media screen and (min-width: 768px) {
+  .banner {
+    padding-left: 100px;
+  }
+}
+
+.callContainer {
+  top: 73vh;
+  z-index: 1;
+  position: fixed;
+  // width: 100px;
+  right: 9%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.callImage {
+  font-size: 30px;
+  // height: 50px;
+  // width: 70px;
+  // border-radius: 5px;
+  // margin: 13px;
+}
+
+.whatsappContainer {
+  top: 80vh;
+  z-index: 1;
+  position: fixed;
+  // width: 100px;
+  right: 5%;
+}
+.whatsappImage {
+  height: 70px;
+  width: 70px;
+  border-radius: 5px;
+  // margin: 13px;
+}
+
+@media screen and (min-width: 500px) {
+  .callContainer {
+    top: 82vh;
+    right: 6%;
+  }
+  .whatsappContainer {
+    top: 90vh;
+    right: 5%;
+  }
+}
+
+// @media screen and (min-width: 1500px) {
+//   .callContainer {
+//     right: 6%;
+//   }
+// }

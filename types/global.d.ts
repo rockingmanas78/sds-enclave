@@ -12,3 +12,10 @@ declare module '*.jpeg' {
   const content: any;
   export default content;
 }
+
+// src/global.d.ts
+declare namespace JSX {
+  interface IntrinsicElements {
+    'ion-icon': any;
+  }
+}

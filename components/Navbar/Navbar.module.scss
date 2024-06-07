@@ -5,10 +5,11 @@
   position: fixed;
   background-color: transparent;
   z-index: 1111;
-  color: black;
+  color: black !important;
   transition: all 0.2s ease-in-out;
   width: 100%;
-  height: 188px;
+  // height: 188px;
+  height: 130px;
   padding: 24px 80px;
   &.active {
     background-color: white !important;
@@ -85,4 +86,34 @@
   .navbar {
     padding: 26px;
   }
+}
+
+.hamburger {
+  display: block;
+}
+
+@media screen and (min-width: 600px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.navbar-link {
+  color: var(--cadet);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  padding-block: 15px;
+}
+
+.navbar-link:is(:hover, :focus) {
+  color: var(--orange-soda);
+}
+
+.navbar-link {
+  color: var(--cadet);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  padding-block: 15px;
 }

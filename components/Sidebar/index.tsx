@@ -11,27 +11,28 @@ import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton, ListItemIcon } from '@mui/material';
 
-import { handleMoveToId } from 'utils';
+// import { handleMoveToId } from 'utils';
 import { useRouter } from 'next/router';
 
 const options = [
-  { title: 'Get Started' },
-  { title: 'Sponsors', link: '/sponsor' },
-  { title: 'About us', link: '/?about-us=true' },
-  { title: 'Careers', link: '/career' },
+  { title: 'Home', link: '#' },
+  { title: 'About Us', link: '#about' },
+  { title: 'Gallery', link: '#gallery' },
+  { title: 'News', link: '#blog' },
+  { title: 'Conatct Us', link: '#contactus' },
 ];
 
 const Sidebar: React.FC<any> = ({ setOpen, open }) => {
   const router = useRouter();
-  const handleButtonClick = () => {
-    router.pathname !== '/' && router.push('/?cta=true');
-    router.pathname === '/' && handleMoveToId();
-  };
+  // const handleButtonClick = () => {
+  //   router.pathname !== '/' && router.push('/?cta=true');
+  //   router.pathname === '/' && handleMoveToId();
+  // };
 
-  const handleAboutUsClick = () => {
-    router.pathname !== '/' && router.push('/?about-us=true');
-    router.pathname === '/' && handleMoveToId('about-us');
-  };
+  // const handleAboutUsClick = () => {
+  //   router.pathname !== '/' && router.push('/?about-us=true');
+  //   router.pathname === '/' && handleMoveToId('about-us');
+  // };
 
   const list = () => (
     <Box sx={{ width: 250 }} role="presentation">
@@ -57,13 +58,14 @@ const Sidebar: React.FC<any> = ({ setOpen, open }) => {
               </>
             </ListItemIcon> */}
             <ListItemText>
-              {option.link ? (
+              <a href={option.link}>{option.title}</a>
+              {/* {option.link ? (
                 <Link href={option.link}>
                   <a onClick={option.title === 'About us' ? handleAboutUsClick : undefined}>{option.title}</a>
                 </Link>
               ) : (
                 <a onClick={handleButtonClick}>{option.title}</a>
-              )}
+              )} */}
             </ListItemText>
           </ListItem>
         ))}

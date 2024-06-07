@@ -1,66 +1,97 @@
-html,
-body {
-  scroll-behavior: smooth;
-  font-family: IBM Plex Sans !important;
-}
+/* styles/globals.scss */
 
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+  --dark-jungle-green: hsl(188, 63%, 7%);
+  --prussian-blue: hsl(200, 69%, 14%);
+  --raisin-black-1: hsl(227, 29%, 13%);
+  --raisin-black-2: hsl(229, 17%, 19%);
+  --yellow-green: hsl(89, 72%, 45%);
+  --orange-soda: hsl(9, 100%, 62%);
+  --cultured-1: hsl(0, 0%, 93%);
+  --cultured-2: hsl(192, 24%, 96%);
+  --misty-rose: hsl(7, 56%, 91%);
+  --alice-blue: hsl(210, 100%, 97%);
+  --seashell: hsl(8, 100%, 97%);
+  --cadet: hsl(200, 15%, 43%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --opal: hsl(180, 20%, 62%);
+  --ff-nunito-sans: 'Nunito Sans', sans-serif;
+  --ff-poppins: 'Poppins', sans-serif;
+  --fs-1: 1.875rem;
+  --fs-2: 1.5rem;
+  --fs-3: 1.375rem;
+  --fs-4: 1.125rem;
+  --fs-5: 0.875rem;
+  --fs-6: 0.813rem;
+  --fs-7: 0.75rem;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --transition: 0.25s ease;
+  --section-padding: 100px;
+  --shadow-1: 0 5px 20px 0 hsla(219, 56%, 21%, 0.1);
+  --shadow-2: 0 16px 32px hsla(188, 63%, 7%, 0.1);
 }
 
 * {
-  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.padding-wrapper {
-  padding: 20px min(80px, 10%);
-  &.complete {
-    padding: min(80px, 10%);
-  }
-  &.policies {
-    padding-top: 100px;
-  }
+li {
+  list-style: none;
 }
 
-// mui class
-.MuiInputBase-root {
-  color: white;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
-  border-color: #fff;
+a {
+  text-decoration: none;
 }
 
-.MuiInput-root {
-  color: white;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
-  border-color: #fff;
+a,
+img,
+span,
+button,
+ion-icon {
+  display: block;
 }
 
-.MuiInputBase-inputMultiline {
-  color: white !important;
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
-  .padding-wrapper {
-    padding: 24px;
-    &.complete {
-      padding: 24px;
-    }
-    &.policies {
-      padding-top: 100px;
-    }
-  }
+address {
+  font-style: normal;
 }
 
-@media screen and (max-width: 900px) and (orientation: landscape) {
-  .padding-wrapper {
-    padding: 24px;
-    &.complete {
-      padding: 24px;
-    }
-  }
+ion-icon {
+  pointer-events: none;
+}
+
+html {
+  font-family: var(--ff-nunito-sans);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cadet);
+  border-left: 2px solid var(--white);
 }
